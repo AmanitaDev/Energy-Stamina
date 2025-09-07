@@ -7,10 +7,13 @@ namespace DefaultNamespace
     [CreateAssetMenu(fileName = "ResourceBar", menuName = "Scriptables/Resource Bar", order = 0)]
     public class ResourceBarSO : ScriptableObject
     {
-        [Header("Core Settings")] public int resourceCurrent = 100;
+        [Header("Core Settings")] 
+        public float resourceCurrent = 100;
+        public float resourceDefault = 100;
         public int resourceMax = 100;
         public int resourceAbsoluteMax = 1000;
         [Space] public ShapeType shapeOfBar;
+        [Space] public bool increasigByTime = false;
 
         public enum ShapeType
         {

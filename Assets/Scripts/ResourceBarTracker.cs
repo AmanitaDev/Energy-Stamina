@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using DefaultNamespace;
 using Sirenix.OdinInspector;
@@ -28,6 +29,11 @@ public class ResourceBarTracker : MonoBehaviour
     private void Start()
     {
         TriggerFillAnimation();
+    }
+
+    private void OnDestroy()
+    {
+        resourceBarSO.resourceCurrent = resourceBarSO.resourceDefault;
     }
 
     private void ConfigureBarShapeAndProperties()
@@ -100,13 +106,8 @@ public class ResourceBarTracker : MonoBehaviour
                 break;
         }
     }
-
-    public void ChangeResourceByAmountTest(int amount)
-    {
-        ChangeResourceByAmount(amount);
-    }
-
-    public bool ChangeResourceByAmount(int amount)
+    
+    public bool ChangeResourceByAmount(float amount)
     {
         if (resourceBarSO.resourceCurrent + amount < 0)
             return false;

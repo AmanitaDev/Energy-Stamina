@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fc36c56cf784622bce9a8d2e0512133, type: 3}
   m_Name: StaminaBar
   m_EditorClassIdentifier: 
-  resourceCurrent: 50
+  resourceCurrent: 100
   resourceMax: 100
   resourceAbsoluteMax: 1000
   shapeOfBar: 2
+  increasigByTime: 0
   endDegreeValue: 360
   animationSpeed: 1
   _animationTime: 0.25
