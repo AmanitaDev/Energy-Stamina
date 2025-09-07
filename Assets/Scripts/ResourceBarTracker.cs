@@ -19,6 +19,8 @@ public class ResourceBarTracker : MonoBehaviour
     private float _previousFillAmount;
     private Coroutine _fillRoutine;
 
+    public bool FillWithTime => resourceBarSO.increasigByTime;
+
     private void OnValidate()
     {
         if (resourceBarSO == null)

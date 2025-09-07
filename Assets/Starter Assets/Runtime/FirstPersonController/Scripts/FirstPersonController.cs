@@ -181,8 +181,9 @@ namespace StarterAssets
             }
             else
             {
-                // regenerate stamina if we are not sprinting
-                staminaTracker.ChangeResourceByAmount(staminaRegen * Time.deltaTime);
+                // check and regenerate stamina if we are not sprinting
+                if (staminaTracker.FillWithTime) staminaTracker.ChangeResourceByAmount(staminaRegen * Time.deltaTime);
+
                 targetSpeed = MoveSpeed;
             }
 
@@ -249,18 +250,18 @@ namespace StarterAssets
                 {
                     // this line make sure that stamina change and jump happen on one frame
                     _input.jump = false;
-                    
+
                     bool canJump = staminaTracker.ChangeResourceByAmount(staminaJumpCost);
                     feedbackText.text = canJump ? "Jump!!" : "Not enough stamina";
                     feedbackText.color = canJump ? Color.green : Color.red;
                     StartCoroutine(FadeTextOut());
-                    
+
                     IEnumerator FadeTextOut()
                     {
                         yield return new WaitForSeconds(.5f);
                         feedbackText.color = Color.clear;
                     }
-                    
+
                     if (canJump)
                     {
                         // the square root of H * -2 * G = how much velocity needed to reach desired height

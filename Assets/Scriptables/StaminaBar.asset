@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: StaminaBar
   m_EditorClassIdentifier: 
   resourceCurrent: 100
+  resourceDefault: 100
   resourceMax: 100
   resourceAbsoluteMax: 1000
   shapeOfBar: 2
-  increasigByTime: 0
+  increasigByTime: 1
   endDegreeValue: 360
   animationSpeed: 1
   _animationTime: 0.25
